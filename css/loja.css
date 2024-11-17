@@ -1,0 +1,269 @@
+*{
+    color: #fff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #10151C;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #10151C, #838385);
+    padding: 1px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: inherit;
+    z-index: -1;
+    clip-path: ellipse(50% 100% at 30% 0%);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left h1 {
+    font-size: 24px;
+    color: #d3d3d3;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right .search {
+    margin-right: 20px;
+}
+
+.header-right .search input {
+    padding: 5px 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: black;
+}
+
+.header-right a {
+    margin-left: 20px;
+    font-size: 16px;
+    color: #d3d3d3;
+    text-decoration: none;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+.header-right .user-icon {
+    margin-right: 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+
+.main-content {
+    padding: 20px 40px;
+}
+
+.main-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.breadcrumb span {
+    margin: 0 5px;
+}
+
+.sidebar {
+    width: 200px;
+    float: left;
+}
+
+.sidebar ul {
+    color: #C3C3C3;
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    background-color: #868686;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar ul li span {
+    float: right;
+}
+
+.sidebar .clear-filters {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar .clear-filters:hover {
+    color: #2745ee;
+}
+
+.products {
+    margin-left: 220px;
+}
+
+.products .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.products .header .count {
+    font-size: 16px;
+}
+
+.products .header .sort {
+    display: flex;
+    align-items: center;
+}
+
+.products .header .sort select {
+    color: #000;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.products .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.products .grid .product {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #83838500;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.products .grid .product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.products .grid .product img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.products .grid .product .new {
+    background-color: #000;
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.products .grid .product .favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #913d3d;
+}
+
+.products .grid .product .favorite:hover {
+    color: #000;
+}
+
+.products .grid .product .details {
+    margin-top: 10px;
+}
+
+.products .grid .product .details h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.products .grid .product .details .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFE100;
+}
+
+.products .grid .product .details .installments {
+    font-size: 14px;
+    color: #51FF00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .products .grid .product {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .products .grid .product {
+        width: 100%;
+    }
+}
+.footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+}
+
+.footer .map {
+    width: 100%;
+    height: 300px;
+    margin: 0 0 20px 0;
+}
+
+.footer p {
+    font-size: 16px;
+}
