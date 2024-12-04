@@ -34,14 +34,13 @@ public class UsuarioController extends HttpServlet {
     }
 
     private void handleLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
+        String name = request.getParameter("name");
+        String senha = request.getParameter("password");
 
         try {
-            Usuario usuario = new Usuario(email, senha);
-            boolean loginValido = usuario.login();
+            Usuario usuario = new Usuario(name, senha);
 
-            if (loginValido) {
+            if (usuario.login()) {
                 response.sendRedirect("inicio.html");
             } else {
                 response.sendRedirect("index.html?erro=login");
@@ -53,12 +52,12 @@ public class UsuarioController extends HttpServlet {
     }
 
     private void handleCadastro(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String nome = request.getParameter("nome");
+        String name = request.getParameter("name");
         String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
+        String password = request.getParameter("password");
 
         try {
-            Usuario usuario = new Usuario(nome, email, senha);
+            Usuario usuario = new Usuario(name, email, password);
             UsuarioDAO dao = new UsuarioDAO();
             dao.setNewUser(usuario);
             response.sendRedirect("index.html?sucesso=cadastro");
